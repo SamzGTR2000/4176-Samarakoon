@@ -1,9 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('Print PATH') { 
+        stage('Build') { 
             steps {
-                sh 'echo $PATH' 
+                sh '/usr/bin/npm install' 
             }
         }
     }
