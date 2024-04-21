@@ -8,18 +8,17 @@ pipeline {
             }
         }
 
-        stage("Build Docker Image") {
-            steps {
-                
-                sh 'docker build -t my-node-app .'
+        stage("Test"){
+            steps{
+                sh 'sudo apt install npm'
             }
         }
 
-        stage("Run Docker Container") {
-            steps {
-                
-                sh 'docker run -d -p 4000:4000 my-node-app'
+        stage("Build"){
+            steps{
+                sh 'npm run dev'
             }
-        }
+         } 
     }
+    
 }
