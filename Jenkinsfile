@@ -27,12 +27,11 @@
 pipeline {
     agent any
     stages {
-        stage('Print PATH') {
+        stage('Build Docker Image') {
             steps {
-                sh 'echo $PATH'
+                sh '/usr/local/bin/docker build -t node-app .'
             }
         }
         // Other stages...
     }
 }
-
